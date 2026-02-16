@@ -1,0 +1,73 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title = "STEKOM UNIVERSITY" } = Astro.props;
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/img/logo/logo_stekom.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="keywords" content="STEKOM, Universitas, Pendidikan, Teknologi, Informatika" />
+
+		<!-- Alpine.js for interactive components -->
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<script is:inline src="/scripts/sliders.js"></script>
+		<script is:inline src="/scripts/gallery.js"></script>
+		<script is:inline src="/scripts/footer.js"></script>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+		<style is:global>
+			body {
+				font-family: 'Inter', system-ui, -apple-system, sans-serif;
+			}
+
+			[x-cloak] {
+				display: none !important;
+			}
+
+			/* Smooth scroll behavior */
+			html {
+				scroll-behavior: smooth;
+			}
+
+			/* Custom scrollbar */
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			::-webkit-scrollbar-track {
+				background: #f1f1f1;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: #888;
+				border-radius: 5px;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: #555;
+			}
+		</style>
+	</head>
+	<body class="font-sans antialiased bg-white">
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,270 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+---
+
+<Layout title="Portal Akademik Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Portal Akademik Universitas STEKOM" breadcrumb="Portal Akademik" />
+
+    <!-- Header Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Portal <span class="text-cyan-600">Akademik</span>
+        </h1>
+        <div class="w-24 h-1.5 bg-cyan-500 mx-auto mb-8 rounded-full shadow-sm"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Akses layanan akademik secara online — cepat, mudah, dan terintegrasi dalam satu platform.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-16">
+
+        <!-- Grid Layanan -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Layanan 1: KRS Online -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">KRS Online</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Isi rencana studi Anda secara online. Perhatikan batas waktu
+                    pengisian di kalender akademik.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        Akses Sekarang
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layanan 2: KHS -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 text-green-600 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">KHS</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Pantau perkembangan akademik Anda dengan mengecek nilai
+                    semester terbaru secara berkala.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-colors">
+                        Lihat Nilai
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layanan 3: Transkrip -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Transkrip</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Unduh transkrip akademik resmi untuk keperluan administratif,
+                    beasiswa, atau melamar kerja.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition-colors">
+                        Unduh PDF
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layanan 4: E-Learning -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 text-yellow-600 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 21h6l-.75-4M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">E-Learning</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Akses materi kuliah, kuis, dan diskusi interaktif di platform
+                    pemebelajaran online STEKOM.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-yellow-600 font-semibold hover:text-yellow-800 transition-colors">
+                        Mulai Belajar
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layanan 5: Jadwal Kuliah -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 text-indigo-600 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Jadwal Kuliah</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Lihat jadwal kuliah harian dan mingguan agar Anda tidak
+                    melewatkan sesi perkuliahan.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                        Lihat Jadwal
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Layanan 6: Kalender Akademik -->
+            <div
+                class="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6 text-pink-600 group-hover:scale-110 transition-transform shadow-inner">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <!-- Better Calendar SVG with details -->
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <rect x="8" y="11" width="2" height="2" fill="currentColor" rx="0.5" />
+                        <rect x="12" y="11" width="2" height="2" fill="currentColor" rx="0.5" />
+                        <rect x="16" y="11" width="2" height="2" fill="currentColor" rx="0.5" />
+                        <rect x="8" y="15" width="2" height="2" fill="currentColor" rx="0.5" />
+                        <rect x="12" y="15" width="2" height="2" fill="currentColor" rx="0.5" />
+                        <rect x="16" y="15" width="2" height="2" fill="currentColor" rx="0.5" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Kalender Akademik</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">Pantau agenda penting universitas mulai dari ujian, hari
+                    libur, hingga jadwal wisuda.</p>
+                <div class="pt-4 border-t border-gray-50">
+                    <a href="#"
+                        class="inline-flex items-center text-pink-600 font-semibold hover:text-pink-800 transition-colors">
+                        Buka Kalender
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Informasi Tambahan -->
+        <div class="bg-blue-50 rounded-3xl p-8 md:p-12 border border-blue-100 shadow-sm">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div
+                    class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Informasi Penting</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Portal hanya dapat diakses oleh mahasiswa aktif STEKOM.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Lengkapi data diri di Sistem Informasi Mahasiswa (SIM).
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Gunakan email institusi untuk kenyamanan akses.
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Bantuan IT: Hubungi PTI Lantai 3 Gedung A.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan Umum</h2>
+                <p class="text-lg text-gray-600">Hal-hal yang sering ditanyakan oleh mahasiswa</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Bagaimana cara reset password?</h4>
+                    <p class="text-gray-600 leading-relaxed">Anda dapat menggunakan fitur "Lupa Password" di halaman login
+                        utama. Instruksi pemulihan akan dikirimkan langsung ke email institusi yang terdaftar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Apa itu KHS dan kapan bisa diakses?</h4>
+                    <p class="text-gray-600 leading-relaxed">Kartu Hasil Studi (KHS) berisi nilai akhir semester Anda. KHS
+                        biasanya dapat diakses satu minggu setelah periode ujian akhir semester selesai.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Berapa lama proses legalisir transkrip?</h4>
+                    <p class="text-gray-600 leading-relaxed">Proses legalisir dokumen akademik biasanya memakan waktu 1-3
+                        hari kerja tergantung pada kelengkapan berkas yang diajukan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Apakah ada versi mobile app?</h4>
+                    <p class="text-gray-600 leading-relaxed">Saat ini Portal Akademik sudah sepenuhnya responsif dan dapat
+                        diakses dengan nyaman melalui browser pada handphone Anda.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</Layout>

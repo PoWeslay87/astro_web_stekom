@@ -1,0 +1,442 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const heroSlides = [
+    '/img/sidbar/coba.png',
+    '/img/sidbar/sidbar1.jpg',
+    '/img/sidbar/sidbar2.jpg',
+    '/img/sidbar/sidbar3.jpg',
+];
+
+const newsItems = [
+    {
+        date: '20',
+        month: 'NOV',
+        image: '/img/berita/berita1.jpg',
+        title: 'Universitas STEKOM Perkuat Pendekatan Kakak Asuh dalam Program Inklusi di SLB Negeri Karangasem Bersama duta inklusi',
+        author: 'Admin_STEKOM',
+        excerpt: 'Universitas STEKOM melaksanakan program pendekatan sosial melalui skema kakak asuh...',
+        slug: 'berita-1'
+    },
+    {
+        date: '20',
+        month: 'NOV',
+        image: '/img/berita/berita2.jpg',
+        title: 'Universitas STEKOM Perkuat Pendidikan Inklusif melalui Penandatanganan MoU dengan SLB.',
+        author: 'Admin_STEKOM',
+        excerpt: 'Penandatanganan Memorandum of Understanding (MoU) antara Universitas STEKOM dengan SLB...',
+        slug: 'berita-2'
+    },
+    {
+        date: '12',
+        month: 'DEC',
+        image: '/img/berita/berita3.png',
+        title: 'Universitas STEKOM Selenggarakan Pelatihan dan Pembuatan CV Digital bagi Siswa SLB Negeri Karangasem.',
+        author: 'Admin_STEKOM',
+        excerpt: 'Dalam rangka meningkatkan kesiapan kerja siswa berkebutuhan khusus, Universitas STEKOM...',
+        slug: 'berita-3'
+    },
+    {
+        date: '15',
+        month: 'DEC',
+        image: '/img/berita/berita4.jpg',
+        title: 'Universitas STEKOM Teken MoU dengan SLB Negeri Karangasem Disaksikan Disdikpora Provinsi Bali',
+        author: 'Admin_STEKOM',
+        excerpt: 'Acara penandatanganan MoU disaksikan langsung oleh perwakilan Dinas Pendidikan Provinsi Bali...',
+        slug: 'berita-4'
+    },
+    {
+        date: '18',
+        month: 'DEC',
+        image: '/img/berita/berita5.jpg',
+        title: 'Bangun Kedekatan dan Kesiapan Kerja, Universitas STEKOM Hadirkan Program Kakak Asuh and Duta Inklusi.',
+        author: 'Admin_STEKOM',
+        excerpt: 'Program Kakak Asuh and Duta Inklusi STEKOM bertujuan membangun kedekatan antara mahasiswa...',
+        slug: 'berita-5'
+    },
+    {
+        date: '22',
+        month: 'DEC',
+        image: '/img/berita/berita6.jpg',
+        title: 'Universitas STEKOM Serahkan Hibah Sarana dan Tetapkan Duta Kebekerjaan di SLB Negeri',
+        author: 'Admin_STEKOM',
+        excerpt: 'Penyerahan hibah sarana pendidikan dan penetapan Duta Kebekerjaan menjadi puncak acara...',
+        slug: 'berita-6'
+    }
+];
+
+const agendaItems = [
+    {
+        image: '/img/agenda/agenda1.jpg',
+        title: 'AGENDA KEGIATAN WORKSHOP 2025',
+        description: 'Universitas STEKOM melalui Lembaga Penelitian dan Pengabdian kepada Masyarakat (LPPM) telah sukses menyelenggarakan Workshop “Strategi Jitu Proposal Penelitian...',
+        date: '20 Desember 2025'
+    },
+    {
+        image: '/img/agenda/agenda2.png',
+        title: 'AGENDA KEGIATAN RAUH BANTUAM PUBLIKASI JURNAL BEREPUTASI 2025',
+        description: 'Universitas Sains dan Teknologi Komputer (Universitas STEKOM) kembali menorehkan prestasi di bidang akademik dan riset. Sejumlah dosen Universitas STEKOM...',
+        date: '12 Desember 2025'
+    }
+];
+
+const galleryImages = [
+    '/img/kegiatan/kegiatan1.jpg',
+    '/img/kegiatan/kegiatan2.jpg',
+    '/img/kegiatan/kegiatan3.jpg',
+    '/img/kegiatan/kegiatan4.jpg',
+    '/img/kegiatan/kegiatan5.jpg',
+    '/img/kegiatan/kegiatan6.jpg',
+];
+---
+
+<Layout title="Beranda - International Universitas STEKOM">
+    <!-- Panoramic Premium Hero Slider -->
+    <section class="relative overflow-hidden bg-[#001845]" x-data={`heroSlider(${JSON.stringify(heroSlides)})`} x-init="startAuto()"
+        @mouseenter="stopAuto()" @mouseleave="startAuto()">
+
+        <!-- Proportion-Optimized Container (4:1 Ratio Preferred) -->
+        <div class="relative h-[300px] md:h-[400px] lg:h-[500px] w-full overflow-hidden">
+            <!-- Cinematic Background Transitions -->
+            <div class="absolute inset-0 z-0">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div class="absolute inset-0 transition-all duration-1000 ease-out"
+                        x-bind:class="{
+                            'opacity-100 scale-100 z-10': currentSlide === index,
+                            'opacity-0 scale-105 z-0': currentSlide !== index
+                        }"
+                        aria-hidden="true">
+                        <img x-bind:src="slide" x-bind:alt="'Banner ' + (index + 1)"
+                            class="w-full h-full object-cover object-center"
+                            onerror="this.src='/img/default-banner.jpg'" />
+                    </div>
+                </template>
+            </div>
+
+            <!-- Solid Gradient for Text Readability -->
+            <div class="absolute inset-0 z-10 bg-linear-to-r from-[#001845] via-[#001845]/95 to-transparent lg:w-[35%]">
+            </div>
+
+            <!-- Slanted Divider for Cinematic Effect -->
+            <div class="absolute inset-0 z-10 hidden lg:block">
+                <div
+                    class="absolute inset-y-0 left-[28%] w-64 bg-linear-to-r from-[#001845] to-transparent -skew-x-12 transform origin-top">
+                </div>
+            </div>
+
+            <!-- Soft Overlay for the Image Area for mobile/small screens -->
+            <div class="absolute inset-0 z-10 bg-black/10 lg:bg-transparent"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-20 flex items-center h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl">
+                    <div class="inline-flex items-center gap-3 mb-4 animate-fade-in-down">
+                        <span class="h-0.5 w-6 bg-cyan-500"></span>
+                        <span class="text-cyan-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em]">UNIVERSITAS
+                            STEKOM</span>
+                    </div>
+
+                    <h1
+                        class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight tracking-tight animate-fade-in">
+                        Membangun <span class="text-cyan-400">Masa Depan</span><br />
+                        Tanpa Batas
+                    </h1>
+
+                    <p
+                        class="text-xs md:text-sm lg:text-base text-gray-200/90 mb-8 leading-relaxed max-w-lg animate-fade-in-up">
+                        Menyelenggarakan pendidikan inovatif dan kreatif berdasarkan profesionalitas serta tren kebutuhan
+                        industri global. Wujudkan impianmu bersama kami.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 animate-fade-in-up">
+                        <a href="https://pmb.stekom.ac.id/" target="_blank"
+                            class="px-6 py-2.5 bg-cyan-600 text-white text-sm font-bold rounded-lg hover:bg-cyan-500 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-cyan-900/40">
+                            Daftar Sekarang
+                        </a>
+                        <a href="/program/sarjana"
+                            class="px-6 py-2.5 border border-white/20 text-white text-sm font-bold rounded-lg hover:bg-white/10 backdrop-blur-sm transition-all">
+                            Lihat Program
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modern Progress Navigation (Hidden on Mobile) -->
+            <div class="absolute bottom-6 right-8 lg:right-12 z-30 hidden lg:block">
+                <div
+                    class="flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/5 shadow-xl">
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <button @click="currentSlide = index" class="relative h-1 transition-all duration-300 rounded-full"
+                            x-bind:class="currentSlide === index ? 'w-8 bg-cyan-500' : 'w-2 bg-white/30 hover:bg-white/50'"
+                            aria-label="Slide Indicator">
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- List Berita Terkini Section with Auto Slider -->
+    <section class="py-16 bg-gray-50" x-data={`newsSlider(${JSON.stringify(newsItems)})`} x-init="startAutoSlide()" @mouseenter="stopAutoSlide"
+        @mouseleave="startAutoSlide">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="relative">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-8 h-1 bg-cyan-500 rounded-full"></span>
+                        <span class="text-xs font-bold text-cyan-600 uppercase tracking-[0.2em]">List Berita Terkini</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight"> Berita <span
+                            class="text-cyan-600">Terbaru</span></h2>
+                </div>
+                <!-- Desktop View More Link -->
+                <a href="/berita"
+                    class="hidden md:inline-flex items-center gap-2 bg-white border-2 border-gray-100 hover:border-cyan-500 text-gray-800 hover:text-cyan-600 px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-sm hover:shadow-cyan-100 group">
+                    Lihat Semua Berita
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button @click="prevSlide()"
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-100 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    aria-label="Previous slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <button @click="nextSlide()"
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-100 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    aria-label="Next slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Slider Wrapper -->
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500 ease-in-out"
+                        x-bind:style="`transform: translateX(-${currentNewsSlide * (100 / slidesPerView)}%)`">
+
+                        <template x-for="(news, index) in newsItems" :key="index">
+                            <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 px-4">
+                                <article
+                                    class="bg-white rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] overflow-hidden hover:shadow-[0_20px_50px_-12px_rgba(6,182,212,0.15)] transition-all duration-500 h-full group flex flex-col border border-gray-100/50 hover:border-cyan-200/50 hover:-translate-y-2">
+                                    <!-- Image Container -->
+                                    <div class="relative overflow-hidden h-72 shrink-0">
+                                        <img x-bind:src="news.image" x-bind:alt="news.title" loading="lazy"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            onerror="this.src='/img/default-news.jpg'" />
+
+                                        <!-- Date Badge (Glassmorphism) -->
+                                        <div
+                                            class="absolute top-4 left-4 backdrop-blur-md bg-white/20 border border-white/30 text-white rounded-2xl overflow-hidden shadow-xl">
+                                            <div class="text-center px-4 py-2">
+                                                <div class="text-2xl font-black leading-none" x-text="news.date"></div>
+                                                <div class="text-[10px] uppercase font-bold tracking-widest opacity-90"
+                                                    x-text="news.month"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Gradient Overlay -->
+                                        <div
+                                            class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-8 flex flex-col grow">
+                                        <!-- Category/Author -->
+                                        <div
+                                            class="flex items-center gap-2 text-xs font-bold text-cyan-600 mb-4 uppercase tracking-wider">
+                                            <span class="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
+                                            <span x-text="news.author"></span>
+                                        </div>
+
+                                        <!-- Title -->
+                                        <h3 class="text-xl font-bold text-gray-900 mb-4 line-clamp-3 group-hover:text-cyan-600 transition-colors duration-300 grow leading-snug"
+                                            x-text="news.title">
+                                        </h3>
+
+                                        <!-- Read More Button -->
+                                        <div class="pt-6 border-t border-gray-50">
+                                            <a x-bind:href="'/berita/detail?index=' + index"
+                                                class="inline-flex items-center gap-2 text-sm font-black text-gray-900 group/btn">
+                                                <span class="relative">
+                                                    Baca Selengkapnya <span
+                                                        class="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></span>
+                                                </span>
+                                                <div
+                                                    class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover/btn:bg-cyan-500 group-hover/btn:text-white transition-all duration-300">
+                                                    <svg class="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5"
+                                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
+
+                <!-- Mobile View More Button -->
+                <div class="mt-8 text-center md:hidden">
+                    <a href="/berita"
+                        class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
+                        Lihat Semua Berita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Bawah Artikel - Agenda, Akreditasi, Galeri -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" x-data="{
+        isOpen: false,
+        modalImage: '',
+        openModal(img) {
+            this.modalImage = img;
+            this.isOpen = true;
+            document.body.style.overflow = 'hidden';
+        },
+        closeModal() {
+            this.isOpen = false;
+            document.body.style.overflow = 'auto';
+        }
+    }"
+        @keydown.escape.window="closeModal()">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Kiri: Agenda Kegiatan -->
+            <div class="bg-white rounded-lg shadow-sm p-5">
+                <h3 class="font-bold text-gray-800 uppercase tracking-wider mb-4 flex items-center text-xs md:text-sm">
+                    <span class="w-6 h-0.5 bg-cyan-500 mr-2"></span>
+                    Agenda Kegiatan Universitas STEKOM
+                </h3>
+
+                <div class="space-y-6">
+                    {agendaItems.map((agenda, index) => (
+                        <div class={`group ${index !== agendaItems.length - 1 ? 'mb-6 pb-6 border-b border-gray-100' : ''}`}>
+                            <!-- Thumbnail Container -->
+                            <div class="relative aspect-video overflow-hidden rounded-xl mb-4 shadow-md cursor-pointer"
+                                @click={`openModal('${agenda.image}')`}>
+                                <img src={agenda.image} alt={agenda.title} loading="lazy"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                                <div
+                                    class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div
+                                        class="bg-white/20 backdrop-blur-md p-3 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Content -->
+                            <div>
+                                <h4
+                                    class="font-bold text-gray-900 mb-1.5 uppercase text-sm md:text-base group-hover:text-cyan-600 transition-colors">
+                                    {agenda.title}
+                                </h4>
+                                <div
+                                    class="flex items-center text-[10px] text-gray-500 mb-2 font-semibold tracking-wide uppercase">
+                                    <svg class="w-3.5 h-3.5 mr-1.5 text-cyan-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    {agenda.date}
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed line-clamp-2">
+                                    {agenda.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Kanan: Akreditasi & Galeri -->
+            <div class="space-y-8">
+                <!-- Akreditasi -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-gray-800 uppercase tracking-wider mb-4 flex items-center">
+                        <span class="w-6 h-0.5 bg-cyan-500 mr-2"></span>
+                        Akreditasi Institusi & Program Studi
+                    </h3>
+                    <div class="text-center group cursor-pointer"
+                        @click="openModal('/img/agenda/akreditasi.png')">
+                        <img src="/img/agenda/akreditasi.png" alt="Logo BAN-PT" loading="lazy"
+                            class="mx-auto w-32 h-auto mb-4 transform group-hover:scale-105 transition-transform duration-300" />
+                        <div class="font-bold text-blue-700 mb-2 text-lg">AKREDITASI INSTITUSI "B"</div>
+                        <div class="text-sm text-gray-600 font-mono">453/SK/BAN-PT/Ak.Ppj/PT/VII/2023</div>
+                    </div>
+                </div>
+
+                <!-- Galeri -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-gray-800 uppercase tracking-wider mb-4 flex items-center">
+                        <span class="w-6 h-0.5 bg-cyan-500 mr-2"></span>
+                        Dokumentasi Kegiatan
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {galleryImages.map((image, index) => (
+                            <div class="relative overflow-hidden rounded-lg group h-32 md:h-40 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                                @click={`openModal('${image}')`}>
+                                <img src={image} alt={`Galeri ${index + 1}`} loading="lazy"
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                                <div
+                                    class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white scale-0 group-hover:scale-100 transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Modal Overlay -->
+        <div x-show="isOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm"
+            style="display: none;">
+
+            <!-- Close Button -->
+            <button @click="closeModal()"
+                class="absolute top-4 right-4 text-white hover:text-cyan-400 transition-colors z-110 bg-black/20 p-2 rounded-full hover:bg-black/40">
+                <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Image Container -->
+            <div class="relative max-w-7xl w-full h-full flex items-center justify-center" @click.away="closeModal()">
+                <img x-bind:src="modalImage"
+                    class="max-w-full max-h-full object-contain shadow-2xl rounded-sm transform transition-transform duration-300"
+                    x-show="isOpen" x-transition:enter="transition ease-out duration-300 transform"
+                    x-transition:enter-start="scale-95 opacity-0" x-transition:enter-end="scale-100 opacity-100" />
+            </div>
+        </div>
+    </div>
+</Layout>

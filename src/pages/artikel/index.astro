@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const articles = [
+    {
+        index: 1,
+        category: 'Pendidikan',
+        category_color: 'bg-emerald-500',
+        date: '22 Nov',
+        author: 'Prof. Dr. Ni Luh Putu',
+        image: '/img/artikel/artikel2.jpg',
+        title: 'Cara Mengatasi Mahasiswa yang Sering Mengantuk Saat Kuliah',
+        desc: 'Strategi praktis menghadapi kelelahan akademik dan menjaga fokus maksimal di ruang kelas.',
+    },
+    {
+        index: 2,
+        category: 'Bisnis',
+        category_color: 'bg-blue-500',
+        date: '05 Dec',
+        author: 'Ir. I Made Sudarma',
+        image: '/img/artikel/artikel3.png',
+        title: 'Kewirausahaan: Bangun Bisnis, Raih Kesuksesan, Ciptakan Peluang',
+        desc: 'Menumbuhkan mentalitas entrepreneur sejak bangku kuliah untuk kemandirian ekonomi masa depan.',
+    },
+    {
+        index: 3,
+        category: 'AI & ML',
+        category_color: 'bg-purple-500',
+        date: '12 Dec',
+        author: 'Dr. Komang Candra',
+        image: '/img/artikel/artikel4.png',
+        title: 'AI & Machine Learning: Teknologi Cerdas untuk Masa Depan Digital',
+        desc: 'Eksplorasi mendalam tentang bagaimana algoritma cerdas mengubah lanskap industri modern.',
+    },
+    {
+        index: 4,
+        category: 'Karier',
+        category_color: 'bg-amber-500',
+        date: '18 Dec',
+        author: 'Dr. Ni Made Rai',
+        image: '/img/artikel/artikel5.jpg',
+        title: 'Gaji Fresh Graduate IT: Peluang Karier dan Penghasilan Era Digital',
+        desc: 'Panduan gaji dan navigasi karier bagi lulusan teknologi informasi di pasar kerja global.',
+    },
+    {
+        index: 5,
+        category: 'Sosial',
+        category_color: 'bg-rose-500',
+        date: '25 Dec',
+        author: 'Dr. I Gusti Ayu',
+        image: '/img/artikel/artikel6.png',
+        title: 'Peran Pemerintah dalam Meningkatkan Kesejahteraan Masyarakat',
+        desc: 'Analisis kritis terhadap kebijakan publik dan dampaknya pada taraf hidup masyarakat luas.',
+    },
+    {
+        index: 0,
+        category: 'Teknologi',
+        category_color: 'bg-cyan-500',
+        date: '15 Nov',
+        author: 'Dr. Made Arya',
+        image: '/img/artikel/artikel1.jpg',
+        title: 'AI untuk Mahasiswa: Memperkuat Kognisi Manusia',
+        desc: 'Memastikan AI tetap menjadi alat pendukung berpikir kritis, bukan pengganti proses kreatif.',
+    },
+];
+---
+
+<Layout title="Artikel & Karya Ilmiah Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Artikel Terbaru Universitas STEKOM" breadcrumb="Artikel" />
+
+    <!-- Articles Section -->
+    <section class="py-20 bg-gray-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Header & Filter Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                        Wawasan & <span class="text-cyan-600">Inspirasi</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Temukan pemikiran terbaru dari komunitas akademik Universitas STEKOM. Dari riset mendalam hingga
+                        opini inspiratif tentang masa depan digital.
+                    </p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap md:justify-end gap-2 shrink-0">
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-cyan-600 text-white font-medium shadow-lg shadow-cyan-200 transition-all">Semua</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Teknologi</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Pendidikan</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Kewirausahaan</button>
+                </div>
+            </div>
+
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {articles.map((article) => (
+                    <article
+                        class="group bg-white rounded-4xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col">
+
+                        <!-- Image Container -->
+                        <div class="relative overflow-hidden aspect-16/10">
+                            <img src={article.image} alt={article.title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                onerror="this.src='/img/logo_stekom.png';" />
+
+                            <!-- Category Badge -->
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class={`${article.category_color} text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg`}>
+                                    {article.category}
+                                </span>
+                            </div>
+
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
+                        </div>
+
+                        <!-- Content Body -->
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div
+                                class="flex items-center gap-3 text-xs font-bold text-gray-400 mb-4 uppercase tracking-wider">
+                                <span class="text-cyan-600">{article.date}</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>{article.author}</span>
+                            </div>
+
+                            <h3
+                                class="text-xl font-bold text-gray-900 mb-4 group-hover:text-cyan-600 transition-colors duration-300 line-clamp-2 leading-tight">
+                                <a href={`/artikel/detail?index=${article.index}`}>{article.title}</a>
+                            </h3>
+
+                            <p class="text-gray-600 text-sm mb-8 line-clamp-3 leading-relaxed">
+                                {article.desc}
+                            </p>
+
+                            <div class="mt-auto">
+                                <a href={`/artikel/detail?index=${article.index}`}
+                                    class="inline-flex items-center gap-3 text-sm font-black text-gray-900 group/link uppercase tracking-widest">
+                                    Baca Selengkapnya
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover/link:bg-cyan-600 group-hover/link:text-white transition-all duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            <!-- Enhanced Pagination -->
+            <div class="mt-12 md:mt-20 flex flex-col items-center border-t border-gray-100 pt-10 md:pt-16 text-center">
+                <p class="text-gray-500 text-sm mb-6 md:mb-10 font-medium italic">Menampilkan 6 dari 48 artikel</p>
+
+                <button
+                    class="px-8 py-3.5 md:px-12 md:py-4 bg-[#001845] text-white text-sm md:text-base font-bold uppercase tracking-wider rounded-xl shadow-lg shadow-blue-900/20 hover:bg-[#00205b] hover:shadow-xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300 active:scale-95">
+                    Eksplorasi Lebih Banyak
+                </button>
+            </div>
+        </div>
+    </section>
+</Layout>

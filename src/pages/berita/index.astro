@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const newsItems = [
+    {
+        index: 0,
+        category: 'Kegiatan',
+        category_color: 'bg-cyan-500',
+        date: '20 Nov',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita1.jpg',
+        title: 'Universitas STEKOM Perkuat Pendekatan Kakak Asuh dalam Program Inklusi',
+        desc: 'Program pendekatan sosial melalui skema kakak asuh dan adik asuh bersama duta inklusi di SLB Negeri Karangasem.',
+    },
+    {
+        index: 1,
+        category: 'Kerjasama',
+        category_color: 'bg-emerald-500',
+        date: '20 Nov',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita2.jpg',
+        title: 'Penandatanganan MoU dengan SLB untuk Pendidikan Inklusif',
+        desc: 'Langkah strategis pengembangan pendidikan inklusif melalui kerjasama resmi dengan SLB Negeri 1 dan 2 Buleleng.',
+    },
+    {
+        index: 2,
+        category: 'Pelatihan',
+        category_color: 'bg-purple-500',
+        date: '12 Dec',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita3.png',
+        title: 'Pelatihan Pembuatan CV Digital bagi Siswa SLB Negeri Karangasem',
+        desc: 'Meningkatkan kesiapan kerja siswa berkebutuhan khusus melalui penguasaan teknologi pembuatan CV digital modern.',
+    },
+    {
+        index: 3,
+        category: 'Event',
+        category_color: 'bg-amber-500',
+        date: '15 Dec',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita4.jpg',
+        title: 'MoU STEKOM dan SLB Karangasem Disaksikan Disdikpora Bali',
+        desc: 'Kerjasama lintas institusi untuk meningkatkan standar kualitas pendidikan inklusif di wilayah Provinsi Bali.',
+    },
+    {
+        index: 4,
+        category: 'Program',
+        category_color: 'bg-blue-500',
+        date: '18 Dec',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita5.jpg',
+        title: 'Program Kakak Asuh dan Duta Inklusi untuk Kesiapan Kerja',
+        desc: 'Membangun kedekatan emosional dan profesional antara mahasiswa dangan siswa berkebutuhan khusus.',
+    },
+    {
+        index: 5,
+        category: 'Hibah',
+        category_color: 'bg-rose-500',
+        date: '22 Dec',
+        author: 'Admin_STEKOM',
+        image: '/img/berita/berita6.jpg',
+        title: 'Penyerahan Hibah Sarana dan Penetapan Duta Kebekerjaan',
+        desc: 'Puncak acara kerjasama STEKOM-SLB melalui pemberian bantuan fasilitas pendidikan yang komprehensif.',
+    },
+];
+---
+
+<Layout title="Berita & Artikel Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Berita Terbaru Universitas STEKOM" breadcrumb="Berita" />
+
+    <!-- News Section -->
+    <section class="py-20 bg-gray-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Header & Filter Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                        Berita <span class="text-cyan-600">Terbaru</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Ikuti perkembangan terbaru, prestasi mahasiswa, dan berbagai kegiatan inovatif di lingkungan
+                        Universitas STEKOM.
+                    </p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap md:justify-end gap-2 shrink-0">
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-cyan-600 text-white font-medium shadow-lg shadow-cyan-200 transition-all">Semua</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Akademik</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Prestasi</button>
+                    <button
+                        class="px-4 lg:px-6 py-2.5 rounded-full bg-white text-gray-600 font-medium hover:bg-gray-100 transition-all shadow-sm">Kegiatan</button>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {newsItems.map((news) => (
+                    <article
+                        class="group bg-white rounded-4xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 overflow-hidden flex flex-col">
+
+                        <!-- Image Container -->
+                        <div class="relative overflow-hidden aspect-16/10">
+                            <img src={news.image} alt={news.title}
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                onerror="this.src='/img/logo_stekom.png';" />
+
+                            <!-- Category Badge -->
+                            <div class="absolute top-4 left-4 z-10">
+                                <span
+                                    class={`${news.category_color} text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg`}>
+                                    {news.category}
+                                </span>
+                            </div>
+
+                            <!-- Overlay Gradient -->
+                            <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
+                        </div>
+
+                        <!-- Content Body -->
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div
+                                class="flex items-center gap-3 text-xs font-bold text-gray-400 mb-4 uppercase tracking-wider">
+                                <span class="text-cyan-600">{news.date}</span>
+                                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>{news.author}</span>
+                            </div>
+
+                            <h3
+                                class="text-xl font-bold text-gray-900 mb-4 group-hover:text-cyan-600 transition-colors duration-300 line-clamp-2 leading-tight">
+                                <a href={`/berita/detail?index=${news.index}`}>{news.title}</a>
+                            </h3>
+
+                            <p class="text-gray-600 text-sm mb-8 line-clamp-3 leading-relaxed">
+                                {news.desc}
+                            </p>
+
+                            <div class="mt-auto">
+                                <a href={`/berita/detail?index=${news.index}`}
+                                    class="inline-flex items-center gap-3 text-sm font-black text-gray-900 group/link uppercase tracking-widest">
+                                    Baca Selengkapnya
+                                    <span
+                                        class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover/link:bg-cyan-600 group-hover/link:text-white transition-all duration-300">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            <!-- Enhanced Pagination -->
+            <div class="mt-12 md:mt-20 flex flex-col items-center border-t border-gray-100 pt-10 md:pt-16 text-center">
+                <p class="text-gray-500 text-sm mb-6 md:mb-10 font-medium italic">Menampilkan 6 dari 24 berita terbaru</p>
+
+                <button
+                    class="px-8 py-3.5 md:px-12 md:py-4 bg-[#001845] text-white text-sm md:text-base font-bold uppercase tracking-wider rounded-xl shadow-lg shadow-blue-900/20 hover:bg-[#00205b] hover:shadow-xl hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300 active:scale-95">
+                    Lihat Berita Lainnya
+                </button>
+            </div>
+        </div>
+    </section>
+</Layout>

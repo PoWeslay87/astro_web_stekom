@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+---
+
+<Layout title="Detail Berita - Universitas STEKOM">
+    <ArticleBanner title="Detail Berita" />
+
+    <div class="bg-gray-50/50 min-h-screen py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Main Layout Grid -->
+            <div class="flex flex-col lg:flex-row gap-8">
+
+                <!-- Left Column: Article -->
+                <article class="lg:w-3/4">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+
+                        <!-- Featured Image Stage -->
+                        <div class="relative group">
+                            <img id="article-image" src="/img/logo_stekom.png" alt="Article Image"
+                                class="w-full h-auto max-h-[500px] object-cover bg-gray-900 transition-transform duration-500" />
+                            <div class="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/50 to-transparent">
+                            </div>
+                        </div>
+
+                        <div class="p-6 md:p-10">
+                            <!-- Meta Info & Category -->
+                            <div class="flex flex-wrap items-center gap-4 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-bold uppercase tracking-wider rounded-lg">
+                                    Berita Terkini
+                                </span>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mr-2 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    <span id="article-author">Loading...</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    <svg class="w-4 h-4 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span id="article-date-meta">Loading Date...</span>
+                                </div>
+                            </div>
+
+
+                            <!-- Main Content Body -->
+                            <div id="article-content" class="prose prose-lg max-w-none text-gray-600 leading-relaxed mb-12">
+                                <div class="animate-pulse space-y-4">
+                                    <div class="h-4 bg-gray-200 rounded w-3/4"></div>
+                                    <div class="h-4 bg-gray-200 rounded"></div>
+                                    <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                                </div>
+                            </div>
+
+                            <!-- Action Bottom Bar -->
+                            <div class="pt-8 border-t border-gray-100 flex items-center justify-between">
+                                <a href="/berita"
+                                    class="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-cyan-600 to-blue-600 text-white text-sm font-bold rounded-full hover:from-cyan-500 hover:to-blue-500 transition-all shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5 active:scale-95">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                    Kembali ke Berita
+                                </a>
+
+                                <div class="flex gap-4">
+                                    <button class="text-gray-400 hover:text-cyan-600 transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    </button>
+                                    <button class="text-gray-400 hover:text-cyan-400 transition-colors">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="lg:w-1/4 space-y-8">
+
+                    <!-- Premium Category Widget -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-gray-900 text-lg mb-4 flex items-center">
+                            <span class="w-1.5 h-6 bg-cyan-500 rounded-full mr-3"></span>
+                            Kategori
+                        </h3>
+                        <ul class="space-y-1">
+                            <li>
+                                <a href="/berita"
+                                    class="flex items-center justify-between p-3 rounded-xl hover:bg-cyan-50 group transition-all">
+                                    <span class="text-gray-600 group-hover:text-cyan-600 font-medium">Berita</span>
+                                    <svg class="w-3 h-3 text-gray-300 group-hover:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/artikel"
+                                    class="flex items-center justify-between p-3 rounded-xl hover:bg-cyan-50 group transition-all">
+                                    <span class="text-gray-600 group-hover:text-cyan-600 font-medium">Artikel</span>
+                                    <svg class="w-3 h-3 text-gray-300 group-hover:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Recent Updates Widget -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-gray-900 text-lg mb-6 flex items-center">
+                            <span class="w-1.5 h-6 bg-red-600 rounded-full mr-3"></span>
+                            Berita Terbaru
+                        </h3>
+                        <div class="space-y-6" id="recent-posts-list">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+    </div>
+    <script is:inline>
+        const newsItems = [
+            {
+                date: "20 Nov 2025",
+                image: "/img/berita/berita1.jpg",
+                title: "Universitas STEKOM Perkuat Pendekatan Kakak Asuh dalam Program Inklusi di SLB Negeri Karangasem",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) melaksanakan program pendekatan sosial melalui skema kakak asuh dan adik asuh di SLB Negeri Karangasem pada 30 Desember 2025. Program ini bertujuan membangun kedekatan emosional dan kepercayaan diri siswa disabilitas. Pendekatan ini melibatkan mahasiswa Universitas STEKOM sebagai kakak asuh yang mendampingi siswa disabilitas tuna rungu dan tuna grahita sebagai adik asuh. Interaksi dilakukan secara langsung melalui kegiatan edukatif dan dialog sederhana. \n\nSelain membangun keakraban, kegiatan ini juga dimanfaatkan untuk menyeleksi siswa kelas 10, 11, dan 12 yang dinilai memiliki kesiapan kerja. Program ini menjadi bagian dari pelatihan kebekerjaan bagi anak berkebutuhan khusus di Bali yang diselenggarakan oleh Universitas STEKOM.",
+            },
+            {
+                date: "20 Nov 2025",
+                image: "/img/berita/berita2.jpg",
+                title: "Penandatanganan MoU dengan SLB untuk Pendidikan Inklusif",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) melaksanakan kunjungan resmi ke SLB Negeri 1 dan SLB Negeri 2 Buleleng pada 29 Desember 2025. Kunjungan ini menjadi momentum penting dalam memperkuat kerja sama kelembagaan melalui penandatanganan Nota Kesepahaman (MoU) sebagai bentuk komitmen bersama dalam pengembangan pendidikan inklusif dan pemberdayaan anak berkebutuhan khusus. \n\nPenandatanganan MoU dilakukan oleh Rektor Universitas STEKOM, Dr. Joseph Teguh Santoso, S.Kom., M.Kom., bersama Kepala Sekolah SLB Negeri 1 Buleleng, Drs. Made Winarsa. Kegiatan ini menjadi simbol sinergi antara perguruan tinggi dan satuan pendidikan khusus.",
+            },
+            {
+                date: "12 Dec 2025",
+                image: "/img/berita/berita3.png",
+                title: "Pelatihan Pembuatan CV Digital bagi Siswa SLB Negeri Karangasem",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) menyelenggarakan kegiatan pelatihan dan pembuatan curriculum vitae (CV) bagi siswa SLB Negeri Karangasem pada 30 Desember 2025. Kegiatan ini merupakan tahapan lanjutan dari rangkaian tes kecakapan kerja yang sebelumnya telah dilaksanakan, dan ditujukan bagi siswa yang dinyatakan lolos seleksi kesiapan kerja. \n\nDalam kegiatan ini, siswa difasilitasi untuk pembuatan foto CV dan video CV sebagai media perkenalan diri secara profesional. Pendekatan ini disesuaikan dengan perkembangan dunia kerja yang semakin menuntut kemampuan presentasi diri melalui media visual dan digital.",
+            },
+            {
+                date: "15 Dec 2025",
+                image: "/img/berita/berita4.jpg",
+                title: "MoU STEKOM and SLB Karangasem Disaksikan Disdikpora Bali",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) secara resmi menandatangani Nota Kesepahaman (MoU) dengan SLB Negeri Karangasem pada 30 Desember 2025. Penandatanganan ini menjadi tonggak penting dalam penguatan kerja sama di bidang pelatihan kerja dan pengembangan kompetensi siswa disabilitas. Penandatanganan MoU dilakukan oleh Rektor Universitas STEKOM, Dr. Joseph Teguh Santoso, S.Kom., M.Kom., bersama Kepala SLB Negeri Karangasem, Ibu Desak Ketut Caturwangi. Kegiatan ini disaksikan langsung oleh Kepala Bidang PK dan PLK Disdikpora Provinsi Bali.",
+            },
+            {
+                date: "18 Dec 2025",
+                image: "/img/berita/berita5.jpg",
+                title: "Program Kakak Asuh dan Duta Inklusi untuk Kesiapan Kerja",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) melaksanakan kegiatan pendekatan sosial dan edukatif kepada siswa disabilitas di SLB Negeri 1 dan SLB Negeri 2 Buleleng pada 29 Desember 2025. Kegiatan ini difokuskan pada penguatan relasi antara mahasiswa Universitas STEKOM sebagai kakak asuh dengan siswa disabilitas sebagai adik asuh. \n\nYang membedakan kegiatan kali ini adalah keterlibatan Duta Inklusi yang dibawa langsung oleh Universitas STEKOM. Para Duta Inklusi tersebut merupakan siswa terpilih dari SMA dan SMK di Jawa Tengah yang telah mendapatkan pembekalan khusus terkait inklusivitas.",
+            },
+            {
+                date: "22 Dec 2025",
+                image: "/img/berita/berita6.jpg",
+                title: "Penyerahan Hibah Sarana dan Penetapan Duta Kebekerjaan",
+                author: "Admin_STEKOM",
+                fullContent:
+                    "Universitas Sains dan Teknologi Komputer (Universitas STEKOM) melaksanakan kunjungan ke SLB Negeri Karangasem, Bali, pada 30 Desember 2025 dalam rangka penyerahan hibah sarana pendukung pembelajaran dan pelatihan kebekerjaan bagi siswa disabilitas. \n\nUniversitas STEKOM menyerahkan sejumlah hibah berupa dua unit lampu lighting, tripod, tablet, mikrofon nirkabel, kasur lipat, serta kipas angin. Selain penyerahan hibah, Universitas STEKOM juga melakukan seleksi siswa disabilitas untuk ditetapkan sebagai Duta Kebekerjaan. Siswa yang terpilih adalah Bagus, Budi, Sucita, Epina, dan Sindi.",
+            },
+        ];
+
+        function initDetail() {
+            try {
+                const recentPostsList = document.getElementById("recent-posts-list");
+                if (recentPostsList) {
+                    recentPostsList.innerHTML = newsItems
+                        .slice(0, 4)
+                        .map(
+                            (item, i) => `
+                <div class="flex gap-4 group">
+                    <div class="w-16 h-16 shrink-0 rounded-xl overflow-hidden shadow-sm">
+                        <img src="${item.image}" alt="Post" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-[10px] font-black text-cyan-600 uppercase tracking-widest mb-1">Berita</span>
+                        <a href="/berita/detail?index=${i}" class="text-sm font-bold text-gray-800 hover:text-cyan-600 line-clamp-2 leading-snug">
+                            ${item.title}
+                        </a>
+                    </div>
+                </div>
+            `,
+                        )
+                        .join("");
+                }
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const indexStr = urlParams.get("index");
+                const index = parseInt(indexStr);
+
+                const titleEl = document.getElementById("article-title");
+                const contentEl = document.getElementById("article-content");
+                const authorEl = document.getElementById("article-author");
+                const dateEl = document.getElementById("article-date-meta");
+                const imageEl = document.getElementById("article-image");
+                const breadcrumbTitleEl = document.getElementById("breadcrumb-title");
+                const bannerTitleEl = document.getElementById("article-title-banner");
+
+                if (!isNaN(index) && newsItems[index]) {
+                    const news = newsItems[index];
+
+                    if (titleEl) titleEl.textContent = news.title;
+                    if (authorEl) authorEl.textContent = news.author;
+                    if (dateEl) dateEl.textContent = news.date;
+                    if (imageEl) imageEl.src = news.image;
+                    if (breadcrumbTitleEl) breadcrumbTitleEl.textContent = news.title;
+                    if (bannerTitleEl) bannerTitleEl.textContent = news.title;
+
+                    if (contentEl) {
+                        contentEl.innerHTML = news.fullContent
+                            ? news.fullContent
+                                .split(/\n\n|\n/)
+                                .map((p) => `<p class="mb-6">${p.trim()}</p>`)
+                                .join("")
+                            : "";
+                    }
+
+                    document.title = news.title + " | Universitas STEKOM";
+                } else {
+                     if (bannerTitleEl) bannerTitleEl.textContent = "Berita Tidak Ditemukan";
+                     if (titleEl) titleEl.textContent = "Berita Tidak Ditemukan";
+                    if (contentEl) {
+                        contentEl.innerHTML =
+                            '<div class="py-20 text-center"><p class="text-gray-400 font-bold">Maaf, berita yang Anda cari tidak tersedia.</p></div>';
+                    }
+                }
+            } catch (err) {
+                console.error("Error in initDetail:", err);
+            }
+        }
+
+        // Run immediately
+        initDetail();
+
+        // Also run on DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", initDetail);
+    </script>
+</Layout>

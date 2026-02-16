@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const diplomas = [
+    {
+        id: 'd3-teknik-informatika',
+        title: 'D3 Teknik Informatika',
+        degree: 'A.Md.Kom',
+        icon_bg: 'bg-blue-50',
+        icon_color: 'text-blue-600',
+        badge: 'Programming & IT',
+        icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />',
+    },
+    {
+        id: 'd4-akuntansi-perpajakan',
+        title: 'D4 Akuntansi Perpajakan',
+        degree: 'S.Tr.Ak',
+        icon_bg: 'bg-green-50',
+        icon_color: 'text-green-600',
+        badge: 'Audit & Tax',
+        icon: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />',
+    },
+];
+---
+
+<Layout title="Program Diploma Vokasi Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Program Diploma Vokasi Universitas STEKOM" breadcrumb="Program" />
+
+    <!-- Diploma Programs Grid -->
+    <section class="py-16">
+        <div class="max-w-[1440px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                {diplomas.map((program) => (
+                    <div class="group relative bg-white rounded-3xl shadow-xl p-10 md:p-12 border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer overflow-hidden"
+                        onclick={`openModal('${program.id}')`}>
+
+                        <!-- Top Decor -->
+                        <div
+                            class={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${program.icon_bg.replace('bg-', 'from-').replace('50', '50/30')} to-transparent rounded-tr-3xl rounded-bl-full opacity-50`}>
+                        </div>
+
+                        <div class="relative z-10">
+                            <!-- Icon Container -->
+                            <div
+                                class={`w-16 h-16 ${program.icon_bg} rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                                <svg class={`w-8 h-8 ${program.icon_color}`} fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" stroke-width="1.5" set:html={program.icon}>
+                                </svg>
+                            </div>
+
+                            <!-- Degree Badge -->
+                            <div class="flex items-center gap-2 mb-4">
+                                <span
+                                    class="px-3 py-1 bg-yellow-100 text-yellow-700 text-[10px] uppercase tracking-widest font-bold rounded-full">
+                                    {program.degree}
+                                </span>
+                                <span class="text-[10px] text-gray-400 font-medium tracking-wider uppercase">• {program.badge}</span>
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6 group-hover:text-blue-600 transition-colors">
+                                {program.title}
+                            </h3>
+
+                            <!-- Button -->
+                            <div class="flex items-center text-blue-600 font-semibold text-sm group/btn">
+                                <span>Lihat Kurikulum & Detail</span>
+                                <svg class="w-5 h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="diplomaModal"
+        class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm overflow-y-auto h-full w-full hidden z-50 p-4">
+        <div class="relative bg-white w-full max-w-2xl shadow-2xl rounded-3xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0 mx-auto mt-20"
+            id="modalContent">
+            <!-- Modal Header -->
+            <div class="p-6 md:p-8 flex items-center justify-between border-b border-gray-100">
+                <div class="flex items-center gap-4">
+                    <div id="modalIcon" class="w-12 h-12 rounded-xl flex items-center justify-center"></div>
+                    <h3 class="text-xl font-bold text-gray-900" id="modalTitle"></h3>
+                </div>
+                <button onclick="closeModal()"
+                    class="p-2 text-gray-400 hover:text-gray-900 bg-gray-50 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-8 md:p-10 max-h-[70vh] overflow-y-auto">
+                <div class="prose prose-blue max-w-none">
+                    <p class="text-gray-600 text-lg leading-relaxed" id="modalDescription"></p>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-gray-50 p-6 md:p-8 flex flex-col sm:flex-row gap-4 items-center justify-between text-center sm:text-left">
+                <p class="text-sm text-gray-500 font-medium italic">Siap menguasai keahlian terapan?</p>
+                <a href="https://pmb.stekom.ac.id/" target="_blank"
+                    class="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all text-center">
+                    Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="max-w-[1440px] mx-auto px-6 pb-24">
+        <div class="bg-gray-100/50 rounded-[2.5rem] md:rounded-[4rem] p-4 md:p-12">
+            <div
+                class="relative bg-white rounded-2xl md:rounded-3xl px-6 py-12 md:p-20 text-center shadow-[0_32px_64px_-12px_rgba(0,0,0,0.08)] border border-white overflow-hidden">
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <h2
+                        class="text-2xl md:text-5xl font-extrabold mb-6 md:mb-8 text-slate-900 leading-tight tracking-tight">
+                        Mulai Perjalanan Profesional <br class="hidden md:block"> Anda Sekarang
+                    </h2>
+                    <p
+                        class="text-base md:text-xl text-slate-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+                        Program vokasi kami dirancang untuk langsung terjun ke dunia kerja dengan bekal keahlian yang
+                        spesifik dan dibutuhkan industri.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="https://pmb.stekom.ac.id/" target="_blank"
+                            class="px-8 py-3.5 md:px-14 md:py-4 bg-[#002d72] text-white rounded-xl md:rounded-2xl font-bold text-base md:text-lg shadow-xl shadow-blue-900/20 transition-all hover:-translate-y-1 hover:bg-[#001d4d] tracking-wide">
+                            DAFTAR SEKARANG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script is:inline>
+        window.diplomaData = {
+            "d3-teknik-informatika": {
+                title: "D3 Teknik Informatika (A.Md.Kom)",
+                description: "Program Diploma 3 Teknik Informatika fokus pada pengembangan keterampilan praktis di bidang teknologi informasi. Mahasiswa akan belajar pemrograman, basis data, jaringan komputer, dan pengembangan aplikasi. Program ini dirancang untuk menghasilkan lulusan yang siap kerja di industri IT dengan gelar Ahli Madya Komputer yang mumpuni.",
+                bgClass: "bg-blue-100",
+                icon: '<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>',
+            },
+            "d4-akuntansi-perpajakan": {
+                title: "D4 Akuntansi Perpajakan (S.Tr.Ak)",
+                description: "Program Diploma 4 Akuntansi Perpajakan memberikan pemahaman komprehensif tentang sistem perpajakan Indonesia, akuntansi keuangan, and auditing. Mahasiswa akan dibekali pengetahuan praktis tentang perpajakan perusahaan, pajak penghasilan, dan regulasi perpajakan terkini untuk menjadi Sarjana Terapan Akuntansi yang profesional dan siap pakai.",
+                bgClass: "bg-green-100",
+                icon: '<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+            },
+        };
+
+        const modal = document.getElementById("diplomaModal");
+        const modalContent = document.getElementById("modalContent");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const modalIcon = document.getElementById("modalIcon");
+
+        window.openModal = (id) => {
+            const data = window.diplomaData[id];
+            if (!data) return;
+
+            modalTitle.textContent = data.title;
+            modalDescription.textContent = data.description;
+            modalIcon.innerHTML = data.icon;
+            modalIcon.className = `w-12 h-12 rounded-xl flex items-center justify-center ${data.bgClass}`;
+
+            modal.classList.remove("hidden");
+            modal.classList.add("flex", "items-center", "justify-center");
+            
+            setTimeout(() => {
+                modalContent.classList.remove("scale-95", "opacity-0");
+                modalContent.classList.add("scale-100", "opacity-100");
+            }, 10);
+        };
+
+        window.closeModal = () => {
+            if (!modalContent) return;
+            modalContent.classList.remove("scale-100", "opacity-100");
+            modalContent.classList.add("scale-95", "opacity-0");
+            
+            setTimeout(() => {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex", "items-center", "justify-center");
+            }, 300);
+        };
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                window.closeModal();
+            }
+        });
+    </script>
+</Layout>

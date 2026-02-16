@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const misiItems = [
+    'Menyelenggarakan pendidikan tinggi dalam lingkup teknologi e-bisnis dan komputer yang mengedepankan keunggulan IPTEK.',
+    'Melaksanakan kegiatan penelitian inovatif di bidang teknologi e-bisnis sebagai wujud kontribusi nyata bagi masyarakat.',
+    'Melaksanakan pengabdian kepada masyarakat berbasis keilmuan untuk meningkatkan kualitas hidup dan daya saing.',
+    'Membangun kerjasama strategis dengan institusi nasional dan internasional dalam lingkup Tridharma Perguruan Tinggi.'
+];
+---
+
+<Layout title="Visi & Misi Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Visi & Misi Universitas STEKOM" breadcrumb="Visi & Misi" />
+
+    <!-- Header Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Visi & <span class="text-cyan-600">Misi</span>
+        </h1>
+        <div class="w-24 h-1.5 bg-cyan-500 mx-auto mb-8 rounded-full shadow-sm"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Komitmen kami untuk menjadi institusi pendidikan terdepan yang menghasilkan inovator masa depan berbasis
+            technopreneurship.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-12">
+
+        <!-- Visi & Misi Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+            <!-- Visi Section -->
+            <section class="relative group">
+                <div
+                    class="absolute -inset-1 bg-linear-to-r from-blue-600 to-indigo-600 rounded-3xl blur-sm opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+                </div>
+                <div class="relative bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 h-full">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="shrink-0 inline-flex items-center justify-center w-14 h-14 bg-blue-50 rounded-2xl text-blue-600 transform group-hover:scale-105 transition-transform duration-500">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-extrabold text-gray-900">Visi</h2>
+                    </div>
+                    <p class="text-lg text-gray-600 leading-relaxed italic">
+                        "Universitas STEKOM menjadi perguruan tinggi berbasis <span
+                            class="text-blue-600 font-bold not-italic">technopreneurship</span> yang menghasilkan lulusan
+                        berstandar nasional dan berwawasan internasional serta memiliki kompetensi dibidangnya."
+                    </p>
+                </div>
+            </section>
+
+            <!-- Misi Section -->
+            <section class="bg-white rounded-3xl shadow-lg p-8 md:p-10 border border-gray-100 relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-indigo-50 rounded-full opacity-30 filter blur-3xl">
+                </div>
+
+                <div class="relative">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="shrink-0 inline-flex items-center justify-center w-14 h-14 bg-indigo-50 rounded-2xl text-indigo-600">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-extrabold text-gray-900">Misi Kami</h2>
+                    </div>
+
+                    <ul class="space-y-4">
+                        {misiItems.map((misi) => (
+                            <li class="flex items-start gap-4 group">
+                                <span
+                                    class="mt-1 shrink-0 w-5 h-5 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </span>
+                                <p
+                                    class="text-gray-600 leading-relaxed font-medium group-hover:text-gray-900 transition-colors text-sm md:text-base">
+                                    {misi}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Call to Action / Motto Section -->
+        <section class="max-w-4xl mx-auto">
+            <div
+                class="bg-blue-50/50 rounded-3xl p-8 md:p-10 text-center border-t-4 border-blue-600 shadow-sm relative overflow-hidden">
+                <div class="relative z-10">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-3">Biaya Hemat, Mutu Terjamin</h3>
+                    <p class="text-gray-600 text-base md:text-lg">
+                        Bersama Universitas STEKOM, wujudkan cita-cita Anda dengan pendidikan berkualitas berstandar
+                        internasional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</Layout>

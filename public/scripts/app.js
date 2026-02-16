@@ -1,0 +1,9 @@
+import "../css/app.css";
+import "./bootstrap";
+import "./program";
+import "./footer";
+import "./sliders";
+import "./news-detail";
+import "./gallery";
+import "./banner";
+import "./article-detail";

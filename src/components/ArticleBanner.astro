@@ -1,0 +1,34 @@
+---
+interface Props {
+    title?: string;
+    breadcrumb?: string;
+}
+const { title = "Loading...", breadcrumb } = Astro.props;
+const displayBreadcrumb = breadcrumb || title;
+---
+<!-- Banner Header Artikel - Full Width -->
+<section class="relative w-full min-h-[300px] md:h-[250px] md:min-h-[250px] bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center py-12 md:py-0"
+    style="background-image: url('/img/sidbar/baner.png');">
+    <!-- Overlay gelap untuk memperjelas teks -->
+
+    <!-- Konten Judul & Breadcrumb -->
+    <div class="relative z-10 w-full flex flex-col justify-center items-center h-full text-white px-4">
+        <h1 id="article-title-banner"
+            class="text-2xl md:text-3xl lg:text-4xl xl:text-3xl font-extrabold mb-4 text-center leading-tight max-w-5xl tracking-tight"
+            style="font-family: 'Inter', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+            {title}
+        </h1>
+        <div class="flex items-center justify-center text-xs md:text-base mt-2 font-medium opacity-90">
+            <a href="/"
+                class="hover:text-cyan-300 transition-colors duration-200 underline decoration-2 underline-offset-4"
+                style="font-family: 'Inter', sans-serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                Home
+            </a>
+            <span class="mx-3 text-white/80 font-bold" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">/</span>
+            <span id="breadcrumb-title" class="font-semibold truncate max-w-[70vw] md:max-w-3xl"
+                style="font-family: 'Inter', sans-serif; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                {displayBreadcrumb}
+            </span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+---
+
+<Layout title="Profil Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Profil Universitas STEKOM" breadcrumb="Profil" />
+
+    <!-- Header Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Profil <span class="text-cyan-600">Universitas</span>
+        </h1>
+        <div class="w-24 h-1.5 bg-cyan-500 mx-auto mb-8 rounded-full shadow-sm"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Mengenal lebih dekat institusi pendidikan yang berorientasi pada kualitas dan kesuksesan dunia kerja.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-16">
+
+        <!-- Video Profile Section -->
+        <section class="max-w-5xl mx-auto">
+            <div class="bg-white shadow-2xl rounded-3xl overflow-hidden border border-gray-100">
+                <div class="aspect-video">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/ShrAW2cZi9M?si=V517Jap5s2hd1e4F"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="p-8 md:p-10 bg-linear-to-r from-blue-600 to-indigo-700 text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">Eksplorasi Kampus Kami</h3>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div
+                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 flex items-center gap-2">
+                            <span class="text-lg">🎓</span>
+                            <span class="text-sm font-semibold tracking-wide">Pendidikan Berkualitas</span>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 flex items-center gap-2">
+                            <span class="text-lg">🔬</span>
+                            <span class="text-sm font-semibold tracking-wide">Inovasi Teknologi</span>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 flex items-center gap-2">
+                            <span class="text-lg">✨</span>
+                            <span class="text-sm font-semibold tracking-wide">Karakter Unggul</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="relative bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-50 rounded-full opacity-50 filter blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-indigo-50 rounded-full opacity-50 filter blur-3xl">
+            </div>
+
+            <div class="relative px-8 py-12 md:px-16 md:py-16">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-4">
+                        <span class="p-2 bg-blue-100 rounded-xl text-blue-600">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </span>
+                        Tentang Universitas STEKOM
+                    </h2>
+
+                    <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            Universitas STEKOM sangat mengutamakan kualitas pendidikan dan memberikan ilmu/keahlian yang
+                            berorientasi pada dunia kerja. Kami memastikan setiap lulusan memiliki kompetensi nyata sebagai
+                            bekal mendapatkan kesuksesan profesional.
+                        </p>
+
+                        <div class="bg-gray-50 border-l-4 border-blue-600 p-6 rounded-r-xl my-8">
+                            <p class="italic text-gray-700">
+                                "Awalnya STEKOM berfokus pada dua bidang utama: Elektronika dan Komputer, dengan jenjang
+                                Diploma dan Sarjana (S1). Kini kami bertransformasi menjadi universitas yang lincah menjawab
+                                tantangan zaman."
+                            </p>
+                        </div>
+
+                        <p>
+                            Untuk mendukung proses belajar, kami menyediakan fasilitas lengkap mulai dari laboratorium
+                            komputer mutakhir, akses internet berkecepatan tinggi, perpustakaan digital, serta laboratorium
+                            elektronika yang komprehensif untuk mendukung mahasiswa lebih maju and berkembang.
+                        </p>
+                    </div>
+
+                    <!-- Statistics / Points -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-gray-100">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-1">Modern</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-widest">Fasilitas</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-1">Kreatif</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-widest">Metode Belajar</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-1">Prospektif</div>
+                            <div class="text-sm text-gray-500 uppercase tracking-widest">Masa Depan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</Layout>

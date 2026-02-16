@@ -1,0 +1,145 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const photos = [
+    {
+        src: '/img/wisuda/wisuda1.jpg',
+        title: 'Wisuda Gelombang Dua Universitas Sains dan Teknologi Komputer Semarang',
+    },
+    {
+        src: '/img/wisuda/wisuda2.jpg',
+        title: 'Rektor Universitas STEKOM Mewisuda Gelombang I 1.458 Lulusan Program Strata dan Diploma',
+    },
+    {
+        src: '/img/wisuda/wisuda3.jpg',
+        title: 'Rektor STEKOM : Lulusan STEKOM Bisa Jadi Pengusaha Sukses',
+    },
+    {
+        src: '/img/wisuda/wisuda4.jpg',
+        title: 'Wisuda Bersama 3 Perguruan Tinggi (STEKOM, STMIK Provisi, STIE Trianandra Kartasura) Semester gasal 2019/2020',
+    },
+    {
+        src: '/img/wisuda/wisuda5.jpg',
+        title: 'Wisuda bersama STEKOM ke-31 and STMIK Provisi ke-10 Periode ke 2 Tahun 2018',
+    },
+    {
+        src: '/img/wisuda/wisuda6.jpg',
+        title: 'Wisuda Bersama STEKOM Dan STMIK Provisi',
+    },
+    {
+        src: '/img/wisuda/wisuda7.jpg',
+        title: 'Gelar Wisuda Bersama STIE Studi Ekonomi Modern (STIE STEKOM) and Universitas STEKOM Secara Luring Dengan Prokes',
+    },
+    {
+        src: '/img/wisuda/wisuda8.jpeg',
+        title: 'Rektor dan Jajaran Pimpinan Universitas Secara Resmi Membuka Acara Wisuda.',
+    },
+    {
+        src: '/img/wisuda/wisuda9.jpg',
+        title: 'Penyerahan Sertifikat and Tanda Mata kepada Wisudawan oleh Dosen.',
+    },
+    {
+        src: '/img/wisuda/wisuda10.jpeg',
+        title: 'Wisuda Angkatan ke 3 Bersama Univeristas STEKOM',
+    },
+];
+---
+
+<Layout title="Galeri Wisuda Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Wisuda Universitas STEKOM" breadcrumb="Wisuda" />
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" x-data="galleryLightbox" data-photos={JSON.stringify(photos)}>
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                Galeri <span class="text-cyan-600">Wisuda</span>
+            </h1>
+            <div class="w-24 h-1.5 bg-cyan-500 mx-auto mb-8 rounded-full shadow-sm"></div>
+            <p class="text-gray-600 mt-4 text-lg max-w-3xl mx-auto leading-relaxed">
+                Momen berharga kelulusan mahasiswa Universitas STEKOM yang penuh dengan kebanggaan, harapan, and kenangan
+                tak terlupakan.
+            </p>
+        </div>
+
+        <!-- Grid Galeri -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-10">
+            {photos.map((photo, index) => (
+                <div class="group cursor-pointer" @click={`openModal(${index})`}>
+                    <div
+                        class="aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500 border border-gray-100">
+                        <img src={photo.src} alt={photo.title}
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            onerror="this.src='/img/default-galeri.jpg'" />
+                    </div>
+                    <div class="mt-4 px-1">
+                        <p class="text-xs font-semibold text-gray-700 text-center line-clamp-2 group-hover:text-cyan-600 transition-colors duration-300">
+                            {photo.title}
+                        </p>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <!-- Modal Lightbox (Alpine.js Version) -->
+        <div x-show="isOpen" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-100 bg-black/95 flex items-center justify-center p-0 md:p-4"
+            @keydown.escape.window="closeModal()" 
+            @keydown.arrow-right.window="next()"
+            @keydown.arrow-left.window="prev()"
+            @pointerdown="handlePointerDown($event)"
+            @pointerup="handlePointerUp($event)"
+            style="display: none;">
+
+            <!-- Close Button -->
+            <button @click="closeModal()"
+                class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-110 p-2 hover:bg-white/10 rounded-full">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Navigation -->
+            <button @click.stop="prev()"
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 p-3 rounded-full transition-all z-130">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button @click.stop="next()"
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 p-3 rounded-full transition-all z-130">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <div class="relative w-full h-full flex items-center justify-center p-4 md:p-8" @click.away="closeModal()">
+                <div class="relative max-w-full max-h-full flex items-center justify-center group">
+                    <img :src="activePhoto.src" :alt="activePhoto.title"
+                        class="max-w-full max-h-[90vh] object-contain shadow-2xl transition-all duration-500 scale-95 md:scale-100 select-none pointer-events-none"
+                        x-show="isOpen" x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="scale-90 opacity-0" x-transition:enter-end="scale-100 opacity-100" />
+                </div>
+            </div>
+
+            <!-- Caption Section (Moved to absolute bottom) -->
+            <div class="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-linear-to-t from-black via-black/80 to-transparent z-110 pointer-events-none"
+                x-show="isOpen" x-transition:enter="transition ease-out duration-500 delay-100"
+                x-transition:enter-start="translate-y-full opacity-0" x-transition:enter-end="translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-y-0 opacity-100"
+                x-transition:leave-end="translate-y-full opacity-0">
+                <div class="max-w-5xl mx-auto text-center pointer-events-auto">
+                    <h2 class="text-white text-lg md:text-2xl font-bold mb-2 drop-shadow-md leading-tight"
+                        x-text="activePhoto.title"></h2>
+                    <p class="text-white/70 text-sm md:text-base font-medium" 
+                       x-text="`${currentIndex + 1} / ${photos.length}`">
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</Layout>

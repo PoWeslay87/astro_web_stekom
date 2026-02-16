@@ -1,0 +1,367 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleBanner from '../../components/ArticleBanner.astro';
+
+const jobs = [
+    {
+        company: 'Tokopedia',
+        position: 'Software Engineer Intern',
+        location: 'Jakarta (Remote)',
+        posted: '2 Hari lalu',
+        type: 'Full-time'
+    },
+    {
+        company: 'Gojek',
+        position: 'Junior UX Designer',
+        location: 'South Jakarta',
+        posted: '3 Hari lalu',
+        type: 'Contract'
+    },
+    {
+        company: 'Traveloka',
+        position: 'Data Analyst',
+        location: 'Tangerang',
+        posted: '5 Hari lalu',
+        type: 'Full-time'
+    }
+];
+
+const alumni = [
+    {
+        name: 'Budi Santoso',
+        job: 'Senior Developer',
+        company: 'Google Indonesia',
+        year: '2018',
+        image: '/img/alumi/alumi1.jpg',
+        quote: 'STEKOM memberikan landasan teknis yang sangat kuat bagi karir saya di industri teknologi global.'
+    },
+    {
+        name: 'Siti Aminah',
+        job: 'UI/UX Designer',
+        company: 'Shopee',
+        year: '2020',
+        image: '/img/alumi/alumi2.jpg',
+        quote: 'Dukungan dari Pusat Karir STEKOM sangat membantu saya dalam mempersiapkan portofolio and interview.'
+    },
+    {
+        name: 'Andi Wijaya',
+        job: 'CTO',
+        company: 'Startup Local',
+        year: '2015',
+        image: '/img/alumi/alumi3.jpg',
+        quote: 'Semangat kewirausahaan yang ditanamkan sejak kuliah mendorong saya untuk membangun bisnis sendiri.'
+    }
+];
+---
+
+<Layout title="Karir & Alumni Universitas STEKOM - Universitas STEKOM">
+    <ArticleBanner title="Karir & Alumni Universitas STEKOM" breadcrumb="Karir & Alumni" />
+
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+            Karir & <span class="text-cyan-600">Alumni</span>
+        </h1>
+        <div class="w-24 h-1.5 bg-cyan-500 mx-auto mb-8 rounded-full shadow-sm"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Jembatan penghubung antara dunia akademik dan industri profesional. Membangun masa depan karir Anda dimulai dari
+            sini.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-16">
+
+        <!-- Tentang Alumni Section -->
+        <section class="relative bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-50 rounded-full opacity-50 filter blur-3xl">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-indigo-50 rounded-full opacity-50 filter blur-3xl">
+            </div>
+
+            <div class="relative px-8 py-12 md:px-12 md:py-16 text-left md:text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center justify-start md:justify-center gap-3">
+                    <span class="p-2 bg-blue-100 rounded-lg text-blue-600 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                    </span>
+                    <span>Komunitas Alumni</span>
+                </h2>
+                <div class="prose prose-lg text-gray-600 mx-auto max-w-4xl text-left md:text-center leading-relaxed">
+                    <p class="mb-6">
+                        Alumni Universitas STEKOM adalah aset berharga yang tersebar di berbagai sektor industri. Kami
+                        berkomitmen untuk memfasilitasi jejaring profesional yang kuat antara alumni, mahasiswa, dan
+                        universitas.
+                    </p>
+                    <p>
+                        Melalui platform ini, kami menyediakan wadah untuk berbagi pengalaman, peluang karir, dan
+                        pengembangan kompetensi berkelanjutan. Bersama, kita bangun ekosistem profesional yang saling
+                        mendukung.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan Karir Section -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Layanan Unggulan</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Dukungan komprehensif untuk persiapan karir Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 mx-auto text-blue-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 0H8m8 0v6a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0H8" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 text-center mb-3">Bursa Karir</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Akses eksklusif ke ribuan lowongan pekerjaan dari mitra industri strategis kami.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-6 mx-auto text-green-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 text-center mb-3">Pelatihan & Workshop</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Pengembangan soft skill dan hard skill melalui workshop intensif dan sertifikasi.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 mx-auto text-purple-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 text-center mb-3">Konseling Karir</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Sesi konsultasi privat dengan pakar HR untuk perencanaan karir yang matang.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lowongan Kerja Section -->
+        <section class="bg-gray-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-10">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Lowongan Terbaru</h2>
+                        <p class="mt-2 text-gray-600">Peluang karir terhangat minggu ini</p>
+                    </div>
+                    <a href="#"
+                        class="mt-4 md:mt-0 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        Lihat Semua
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="grid gap-6">
+                    {jobs.map((job) => (
+                        <div
+                            class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 text-blue-600 font-bold text-xl uppercase">
+                                        {job.company.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h3
+                                            class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                            {job.position}</h3>
+                                        <p class="text-gray-500 font-medium">{job.company}</p>
+                                        <div class="flex items-center gap-3 mt-2 text-sm text-gray-500">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                                {job.location}
+                                            </span>
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                {job.posted}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between md:flex-col md:items-end gap-3 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span
+                                        class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
+                                        {job.type}
+                                    </span>
+                                    <span class="text-blue-600 text-sm font-semibold flex items-center">
+                                        Detail
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Alumni Sukses Section -->
+        <section>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Jejak Langkah Alumni</h2>
+                <p class="text-lg text-gray-600">Inspirasi dari mereka yang telah berkarya</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {alumni.map((person) => (
+                    <div
+                        class="group relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div class="absolute top-0 w-full h-24 bg-linear-to-r from-blue-500 to-indigo-600 opacity-90">
+                        </div>
+
+                        <div class="relative px-6 pb-8 pt-16 text-center">
+                            <div class="relative inline-block">
+                                <img class="w-24 h-24 rounded-full border-4 border-white shadow-md object-cover mx-auto"
+                                    src={person.image} alt={person.name} />
+                                <div class="absolute bottom-0 right-0 bg-green-500 border-2 border-white rounded-full p-1">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <h3 class="text-xl font-bold text-gray-900">{person.name}</h3>
+                                <p class="text-sm text-blue-600 font-semibold mb-2">{person.job} @
+                                    {person.company}</p>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider mb-6">Angkatan
+                                    {person.year}</p>
+
+                                <blockquote
+                                    class="text-gray-600 italic text-sm leading-relaxed border-t border-gray-100 pt-4 relative">
+                                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-2">
+                                        <svg class="w-6 h-6 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                                        </svg>
+                                    </span>
+                                    "{person.quote}"
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Kontak Karir Section -->
+        <section class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div class="px-8 py-12 md:px-16 md:py-20 text-center relative">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 left-0 w-32 h-32 bg-yellow-50 rounded-br-full opacity-50"></div>
+                <div class="absolute bottom-0 right-0 w-32 h-32 bg-blue-50 rounded-tl-full opacity-50"></div>
+
+                <div class="relative z-10">
+                    <div class="mb-6 flex flex-col items-center">
+                        <div
+                            class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 shadow-sm">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
+                            Butuh Bantuan Karir?
+                        </h2>
+                    </div>
+                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed">
+                        Tim Pusat Pengembangan Karir kami siap membantu Anda menavigasi masa depan profesional Anda.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Contact Item 1 -->
+                        <div
+                            class="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100">
+                            <div
+                                class="w-14 h-14 mx-auto bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-1">WhatsApp Center</h4>
+                            <p class="text-green-600 font-semibold">0812-1608-5049</p>
+                        </div>
+
+                        <!-- Contact Item 2 -->
+                        <div
+                            class="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100">
+                            <div
+                                class="w-14 h-14 mx-auto bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-1">Email Resmi</h4>
+                            <p class="text-blue-600 font-semibold">karir@stekom.ac.id</p>
+                        </div>
+
+                        <!-- Contact Item 3 -->
+                        <div
+                            class="group p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-100">
+                            <div
+                                class="w-14 h-14 mx-auto bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-1">Kunjungi Kami</h4>
+                            <p class="text-gray-600 font-medium text-sm">Gedung A, Lt. 3 (Ruang Karir)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</Layout>
